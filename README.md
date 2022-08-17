@@ -1,6 +1,6 @@
 ### Docker基本图像构建
 
-## 建筑图像步骤
+## 构建图像步骤
 ```bash
  1、base/{BaseImage|ReleaseImage} 在此路径创建image目录
  2、在gitlab-ci.yml 文件里面创建job
