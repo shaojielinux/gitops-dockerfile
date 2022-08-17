@@ -1,0 +1,24 @@
+workflow:
+  rules:
+  - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+    variables:
+      PUSH: "true"
+  - variables:
+      PUSH: "false"
+stages:
+  - BaseImage
+  - ReleaseImage
+
+
+default:
+  image: 
+    name: harbor.xxx.dev/base/docker:bash
+  tags:
+    - test-build-ec2
+  
+
+alpine:
+  stage: BaseImage
+  when: manual
+  script: 
+    - source ./sh/common.sh alpine && inspect
